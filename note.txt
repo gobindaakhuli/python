@@ -25,4 +25,64 @@ git mergetool
 git rebase --continue
 git push origin master (push the updated code)
 
+Configuring a remote for a fork
+
+You must configure a remote that points to the upstream repository in Git to sync changes you make in a fork with the original repository. This also allows you to sync changes made in the original repository with the fork.
+
+1. Open Terminal.
+
+List the current configured remote repository for your fork.
+
+2. git remote -v
+origin  https://github.com/YOUR_USERNAME/YOUR_FORK.git (fetch)
+origin  https://github.com/YOUR_USERNAME/YOUR_FORK.git (push)
+Specify a new remote upstream repository that will be synced with the fork.
+
+3. git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git
+Verify the new upstream repository you've specified for your fork.
+
+4. git remote -v
+origin    https://github.com/YOUR_USERNAME/YOUR_FORK.git (fetch)
+origin    https://github.com/YOUR_USERNAME/YOUR_FORK.git (push)
+upstream  https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git (fetch)
+upstream  https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git (push)
+
+Syncing a fork
+
+Sync a fork of a repository to keep it up-to-date with the upstream repository.
+
+Fetch the branches and their respective commits from the upstream repository. Commits to master will be stored in a local branch, upstream/master.
+
+1. git fetch upstream
+remote: Counting objects: 75, done.
+remote: Compressing objects: 100% (53/53), done.
+remote: Total 62 (delta 27), reused 44 (delta 9)
+Unpacking objects: 100% (62/62), done.
+From https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY
+ * [new branch]      master     -> upstream/master
+Check out your fork's local master branch.
+
+2. git checkout master
+Switched to branch 'master'
+Merge the changes from upstream/master into your local master branch. This brings your fork's master branch into sync with the upstream repository, without losing your local changes.
+
+3. git merge upstream/master
+Updating a422352..5fdff0f
+Fast-forward
+ README                    |    9 -------
+ README.md                 |    7 ++++++
+ 2 files changed, 7 insertions(+), 9 deletions(-)
+ delete mode 100644 README
+ create mode 100644 README.md
+
+ CREATING BRANCH AND WORK WITH BRANCH
+
+### Create a branch
+git branch <name of the branch>
+
+###Switch to another branch
+git checkout <branch name>
+
+### push the code to the new branch
+git push origin <branch name>
 
