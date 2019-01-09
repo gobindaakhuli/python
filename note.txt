@@ -1,3 +1,5 @@
+## GIT ###
+
 ### Initialize git
 git init
 
@@ -25,7 +27,9 @@ git mergetool
 git rebase --continue
 git push origin master (push the updated code)
 
-Configuring a remote for a fork
+
+CONFIGURING A REMOTE FOR FORK
+
 
 You must configure a remote that points to the upstream repository in Git to sync changes you make in a fork with the original repository. This also allows you to sync changes made in the original repository with the fork.
 
@@ -47,7 +51,10 @@ origin    https://github.com/YOUR_USERNAME/YOUR_FORK.git (push)
 upstream  https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git (fetch)
 upstream  https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git (push)
 
-Syncing a fork
+
+
+SYNCING A FORK
+
 
 Sync a fork of a repository to keep it up-to-date with the upstream repository.
 
