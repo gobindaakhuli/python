@@ -1,0 +1,28 @@
+### Initialize git
+git init
+
+###Add remote repo
+git remote add origin <git repo url>
+
+### pull containt of that repo
+git pull origin master
+
+### add changes to local repo
+git add <file name>
+
+### commit on local repo
+git commit -m "msg"
+
+### push change code to remote
+git push origin master
+
+### If any conflict occure while pushing the code ###
+git pull --rebase origin master
+
+### fix the confliction using mergetool
+git mergetool
+(then fix the confliction and save the file and pass the below commend)
+git rebase --continue
+git push origin master (push the updated code)
+
+
